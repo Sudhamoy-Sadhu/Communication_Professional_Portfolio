@@ -90,3 +90,21 @@
     font-family:Lora,serif !important;;
     font-weight: 500;
 }
+@media (max-width: 600px){
+    .professionalExperience{
+        text-align: center;
+    }
+    .maincontentresume{
+        width: 100%;
+        margin: 0;
+    }
+    .senioreditor{
+        width: 100%;
+    }
+    .contentproducer{
+        width: 100%;
+    }
+    .subeditor{
+        width: 100%;
+    }
+}

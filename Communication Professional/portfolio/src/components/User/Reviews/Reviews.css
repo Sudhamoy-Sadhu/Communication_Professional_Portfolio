@@ -115,4 +115,30 @@
     margin-top: 0px;
     width: 100vw;
   }
+  .all-reviews{
+    padding: 20px;
+    margin: 0px;
+  }
+  .ReviewsContent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .ReviewsContent a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .ReviewsContent h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .mainPic{
+    width: 100%;
+  }
 }

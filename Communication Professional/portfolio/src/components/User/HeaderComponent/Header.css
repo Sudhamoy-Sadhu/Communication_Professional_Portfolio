@@ -187,6 +187,22 @@
     justify-content: center;
     align-items: center;
   }
+  .menu{
+    width: 50vw;
+    height: 15vh;
+    top: 40px;
+    right: 0px;
+    padding: 0;
+    margin: 0;
+    z-index: 80;
+    background: rgba(255, 255, 255, 0.718);
+  }
+  .hr{
+    width: 100%;
+  }
+  .menu button{
+    color: black;
+  }
 
   .buttonleft {
     display: none;
@@ -205,8 +221,10 @@
   }
 
   .buttonright {
-    height: 70%;
-    width: 100%;
+    height: 100%;
+    width: 80vw;
+    margin: 0px;
+    padding: 0px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
