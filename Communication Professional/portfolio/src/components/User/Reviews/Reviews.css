@@ -1,0 +1,118 @@
+.ReviewsMain {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(222, 227, 228);
+  width: 100%;
+}
+
+.Reviewsbox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 75vw;
+  /* height: 100vh; */
+  background: white;
+  margin-top: -55px;
+  border-radius: 10px 10px 0px 0px;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+
+.ReviewsContent {
+  width: 30.5vw;
+  height: 50vh;
+  /* background: red; */
+}
+.ReviewsContent a{
+  text-decoration: none;
+}
+.ReviewsContent h1 {
+  font-size: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  cursor: pointer;
+  color: rgb(23, 25, 28);
+  line-height: 30px;
+  font-weight: 600;
+  font-family: Inter, sans-serif;
+}
+.mainPic {
+  height: 30vh;
+  width: 30vw;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.all-reviews {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  padding-bottom: 50px;
+  /* background: green; */
+}
+.active {
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid blue;
+}
+
+.gotolink{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 13px;
+  font-family: Inter, sans-serif;
+  color: rgb(110, 118, 135);
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.nlogo{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  padding-right: 5px;
+  padding-left: 0;
+}
+
+.nlg{
+  display: flex;
+  align-items: center;
+  padding-left: 7px;
+  text-decoration: none;
+  color: rgb(141,148,161);
+  font-weight: 600;
+}
+
+.dateofReview{
+  font-size: 13px;
+  font-family: Inter, sans-serif;
+  margin-right: 5px;
+  color: rgb(110, 118, 135);
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.articalAt{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 600px){
+  .Reviewsbox{
+    margin-top: 0px;
+    width: 100vw;
+  }
+}

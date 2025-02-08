@@ -1,0 +1,106 @@
+/* General Container */
+.AdminForm {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .AdminForm h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  
+  /* Error Message */
+  .AdminForm .error {
+    color: #ff4d4d;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styles */
+  .AdminForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .AdminForm label {
+    font-size: 1.1em;
+    color: #444;
+    margin-bottom: 5px;
+  }
+  
+  .AdminForm input[type="text"],
+  .AdminForm input[type="url"],
+  .AdminForm input[type="date"] {
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .AdminForm input[type="text"]:focus,
+  .AdminForm input[type="url"]:focus,
+  .AdminForm input[type="date"]:focus {
+    border-color: #3498db;
+  }
+  
+  .AdminForm button[type="submit"] {
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  .AdminForm button[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    .AdminForm {
+      padding: 15px;
+    }
+  
+    .AdminForm h2 {
+      font-size: 1.5em;
+    }
+  
+    .AdminForm .form-group {
+      margin-bottom: 10px;
+    }
+  
+    .AdminForm input[type="text"],
+    .AdminForm input[type="url"],
+    .AdminForm input[type="date"] {
+      padding: 10px;
+    }
+  
+    .AdminForm button[type="submit"] {
+      padding: 10px;
+      font-size: 1em;
+    }
+  }
+  

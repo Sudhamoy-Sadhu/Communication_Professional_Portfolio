@@ -1,0 +1,115 @@
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.contact-modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  height: 550px;
+  max-width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.contact-modal h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #333;
+  display: flex;
+}
+
+.contact-modal .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.contact-modal label {
+  font-size: 14px;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-modal input,
+.contact-modal textarea {
+  width: 96%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.contact-modal textarea {
+  resize: vertical;
+}
+
+.contact-modal textarea:focus,
+.contact-modal input:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+.contact-modal .submit-btn {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #005bb5;
+}
+
+.contact-modal .close-btn {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  border: none;
+  font-size: 18px;
+  width: 20px;
+  height: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none;
+  position: absolute;
+  right: 5%;
+  top: 6%;
+}
+.close-btn:hover {
+  transform: scale(1.1);
+  font-weight: 600;
+}
+
+.contact-modal .error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.contact-modal .captcha {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

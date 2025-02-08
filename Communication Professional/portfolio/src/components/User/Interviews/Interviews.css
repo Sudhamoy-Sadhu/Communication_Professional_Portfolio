@@ -1,0 +1,86 @@
+.ReviewsMain {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(222, 227, 228);
+  width: 100%;
+}
+
+.Reviewsbox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 75vw;
+  /* height: 100vh; */
+  background: white;
+}
+
+.ReviewsContent {
+  width: 33vw;
+  height: 50vh;
+  /* background: red; */
+}
+.ReviewsContent a{
+  text-decoration: none;
+}
+.ReviewsContent h1 {
+  font-size: 22px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  cursor: pointer;
+  color: black;
+}
+.mainPic {
+  height: 30vh;
+  width: 33vw;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.all-reviews {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  /* background: green; */
+}
+.active {
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid blue;
+}
+
+.gotolink{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 400;
+  color:rgb(141,148,161);
+}
+
+.nlogo{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  padding-right: 5px;
+  padding-left: 0;
+}
+
+.nlg{
+  display: flex;
+  align-items: center;
+  padding-left: 7px;
+  text-decoration: none;
+  color: rgb(141,148,161);
+  font-weight: 600;
+}
+
