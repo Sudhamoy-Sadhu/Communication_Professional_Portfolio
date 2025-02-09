@@ -22,7 +22,7 @@ import jakarta.validation.ValidationException;
 
 @RestController
 @RequestMapping("/interviews")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "${frontend.url}")
 public class InterviewsController {
     
     @Autowired

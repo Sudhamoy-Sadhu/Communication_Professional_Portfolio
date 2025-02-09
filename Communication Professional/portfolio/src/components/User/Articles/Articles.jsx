@@ -3,25 +3,31 @@ import axios from "axios";
 import "../Reviews/Reviews.css";
 import { FiExternalLink } from "react-icons/fi";
 import ContentHeader from "../HeaderComponent/ContentHeader/ContentHeader";
+import { API_GET_ARTICLES } from "../../../apiUrl";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
   const [filteredArticles, setFilteredArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Format the article date
+  const formatDate = (date) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = new Date(date).toLocaleDateString('en-US', options);
+    return formattedDate;
+  };
+
+  // Fetch articles data from the backend
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get("http://your-backend-api.com/articles");
-        if (response.data && Array.isArray(response.data)) {
-          setArticles(response.data);
-          setFilteredArticles(response.data);
-        } else {
-          console.error("Invalid data structure from API");
-        }
+        const response = await axios.get(API_GET_ARTICLES);
+        console.log("API Response:", response);
+        setArticles(response.data);
+        setFilteredArticles(response.data);
         setIsLoading(false);
       } catch (error) {
-        console.error("Error fetching articles:", error);
+        console.error("Error fetching Articles:", error);
         setIsLoading(false);
       }
     };
@@ -44,19 +50,20 @@ function Articles() {
             ) : (
               filteredArticles.map((article) => (
                 <div key={article.id} className="ReviewsContent">
-                  <a href={article.link} target="_blank" rel="noopener noreferrer">
+                  <a href={article.articleLink} target="_blank" rel="noopener noreferrer">
                     <img
                       className="mainPic"
                       src={article.imageUrl} 
-                      alt={article.title}
+                      alt={article.articleTitle}
                     />
-                    <h1>{article.title}</h1>
+                    <h1>{article.articleTitle}</h1>
                   </a>
                   <span className="gotolink">
-                    <img className="nlogo" src={article.sourceLogo} alt="source" />
-                    {article.date} - Article at {article.sourceName}
+                    <img className="nlogo" src="./assets/newsbyteslogo.png" alt="source" />
+                    <span className="dateofReview">{formatDate(article.dateOfArticle)}&nbsp;</span> - 
+                    <span className="articalAt">&nbsp; &nbsp;Article at &nbsp; <b>{article.sourceName}</b></span>
                     <a
-                      href={article.link}
+                      href={article.articleLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="nlg"

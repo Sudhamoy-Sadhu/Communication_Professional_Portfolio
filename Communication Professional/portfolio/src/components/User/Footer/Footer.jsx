@@ -12,7 +12,7 @@ function Footer() {
                 <div className="footertop">
                     <div className="leftF">
                         <img className="profile-pic-footer"></img>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero inventore quidem molestiae est ab facilis</span>
+                        <span>A media professional with 5+ years of experience in writing, editing, and publishing content across print and digital platform.</span>
                     </div>
                     <div className="rightF">
                         <div className="footer-menu">
@@ -23,15 +23,15 @@ function Footer() {
                         <div className="footer-social-links">
                             <p>Social</p>
                             <div className="link-logos">
-                                <a href="https://www.linkedin.com/in/shreya-mukherjee-9a1829142/" target="blank"><FaLinkedinIn /></a>
-                                <a href=""><FaWordpress/></a>
-                                <a href=""><FaXTwitter/></a>
+                                <a className="same-same" href="https://www.linkedin.com/in/shreya-mukherjee-9a1829142/" target="blank"><FaLinkedinIn /></a>
+                                <a className="same-same" href=""><FaWordpress/></a>
+                                <a className="same-same" href=""><img className="naukri-png" src="../assets/naukri.png" alt="NaukriLogo"/></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="footerbottom">
-                    <p>&copy; 2025 My Company. All rights reserved.</p>
+                    <p>&copy; 2025 Shreya Mukherjee. All rights reserved.</p>
                 </div>
             </div>
             {modalOpen && <ContactMeModal onClose={() => setModalOpen(false)} />}

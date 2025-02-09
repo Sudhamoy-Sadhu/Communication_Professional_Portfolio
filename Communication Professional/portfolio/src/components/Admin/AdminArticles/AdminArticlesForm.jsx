@@ -1,41 +1,42 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../AdminReviews/AdminreviewsForm.css";
+import { API_SAVE_ARTICLES } from "../../../apiUrl";
 
 function AdminArticlesForm() {
-  const [title, setTitle] = useState("");
-  const [link, setLink] = useState("");
+  const [articleTitle, setArticleTitle] = useState("");
+  const [articleLink, setArticleLink] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [date, setDate] = useState("");
+  const [dateOfArticle, setDateOfArticle] = useState("");
   const [sourceName, setSourceName] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !link || !imageUrl || !date || !sourceName) {
+    if (!articleTitle || !articleLink || !imageUrl || !dateOfArticle || !sourceName) {
       setError("All fields are required");
       return;
     }
 
     const newArticle = {
-      title,
-      link,
+      articleTitle,
+      articleLink,
       imageUrl,
-      date,
+      dateOfArticle,
       sourceName,
     };
 
     try {
-      const response = await axios.post("http://your-backend-api.com/articles", newArticle);
+      const response = await axios.post(API_SAVE_ARTICLES, newArticle);
       
       if (response.status === 201) {
         alert("Article submitted successfully!");
     
-        setTitle("");
-        setLink("");
+        setArticleTitle("");
+        setArticleLink("");
         setImageUrl("");
-        setDate("");
+        setDateOfArticle("");
         setSourceName("");
       }
     } catch (error) {
@@ -54,8 +55,8 @@ function AdminArticlesForm() {
           <input
             type="text"
             id="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={articleTitle}
+            onChange={(e) => setArticleTitle(e.target.value)}
             required
           />
         </div>
@@ -65,8 +66,8 @@ function AdminArticlesForm() {
           <input
             type="url"
             id="link"
-            value={link}
-            onChange={(e) => setLink(e.target.value)}
+            value={articleLink}
+            onChange={(e) => setArticleLink(e.target.value)}
             required
           />
         </div>
@@ -87,8 +88,8 @@ function AdminArticlesForm() {
           <input
             type="date"
             id="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
+            value={dateOfArticle}
+            onChange={(e) => setDateOfArticle(e.target.value)}
             required
           />
         </div>

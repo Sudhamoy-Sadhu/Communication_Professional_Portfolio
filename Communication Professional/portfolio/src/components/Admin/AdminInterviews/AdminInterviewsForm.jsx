@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../AdminReviews/AdminreviewsForm.css";
+import { API_SAVE_INTERVIEWS } from "../../../apiUrl";
 
 function AdminInterviewForm() {
   const [interviewTitle, setInterviewTitle] = useState("");
@@ -27,7 +28,7 @@ function AdminInterviewForm() {
     };
 
     try {
-      const response = await axios.post("http://localhost:8080/interviews/save", newInterview);
+      const response = await axios.post(API_SAVE_INTERVIEWS, newInterview);
       
       if (response.status === 201) {
         alert("Interview submitted successfully!");

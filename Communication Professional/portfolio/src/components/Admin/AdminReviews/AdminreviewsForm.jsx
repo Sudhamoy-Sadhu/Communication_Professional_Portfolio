@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./AdminreviewsForm.css";
+import { API_SAVE_REVIEWS } from "../../../apiUrl";
 
 function AdminReviewsForm() {
   const [reviewTitle, setReviewTitle] = useState("");
@@ -27,7 +28,7 @@ function AdminReviewsForm() {
     };
 
     try {
-      const response = await axios.post("http://localhost:8080/reviews/save", newReview);
+      const response = await axios.post(API_SAVE_REVIEWS, newReview);
       
       if (response.status === 201) {
         alert("Review submitted successfully!");

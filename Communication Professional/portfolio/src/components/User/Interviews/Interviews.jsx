@@ -3,6 +3,7 @@ import axios from "axios";
 import "../Reviews/Reviews.css";
 import { FiExternalLink } from "react-icons/fi";
 import ContentHeader from "../HeaderComponent/ContentHeader/ContentHeader";
+import { API_GET_INTERVIEWS } from "../../../apiUrl";
 
 function Interviews() {
   const [interviews, setInterviews] = useState([]);
@@ -18,7 +19,7 @@ function Interviews() {
   useEffect(() => {
     const fetchInterviews = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/interviews/getallinterviews");
+        const response = await axios.get(API_GET_INTERVIEWS);
         if (response.data && Array.isArray(response.data)) {
           setInterviews(response.data);
           setFilteredInterviews(response.data);
@@ -41,7 +42,7 @@ function Interviews() {
         <div className="Reviewsbox">
           <ContentHeader
             interviews={interviews}
-            setFilteredInterviews={setFilteredInterviews}  // Pass the setter correctly
+            setFilteredInterviews={setFilteredInterviews}
           />
           <div className="all-reviews">
             {isLoading ? (

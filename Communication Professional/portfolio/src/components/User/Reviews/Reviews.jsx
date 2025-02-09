@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Reviews.css";
 import { FiExternalLink } from "react-icons/fi";
 import ContentHeader from "../HeaderComponent/ContentHeader/ContentHeader";
+import { API_GET_REVIEWS } from "../../../apiUrl";
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
@@ -20,9 +21,9 @@ function Reviews() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/reviews/getAllReviews");
+        const response = await axios.get(API_GET_REVIEWS);
         setReviews(response.data);
-        setFilteredReviews(response.data); // Set the fetched reviews as the initial filtered reviews
+        setFilteredReviews(response.data);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching reviews:", error);
@@ -36,7 +37,6 @@ function Reviews() {
   return (
     <div className="ReviewsMain">
       <div className="Reviewsbox">
-        {/* Pass reviews and setFilteredReviews to ContentHeader */}
         <ContentHeader
           reviews={reviews}
           setFilteredReviews={setFilteredReviews}

@@ -169,6 +169,9 @@
 
 .menu.open {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
 }
 
 .menu button {
@@ -188,8 +191,8 @@
     align-items: center;
   }
   .menu{
-    width: 50vw;
-    height: 15vh;
+    width: 55vw;
+    height: 1-5vh;
     top: 40px;
     right: 0px;
     padding: 0;
@@ -202,6 +205,13 @@
   }
   .menu button{
     color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(52, 110, 140);
+    &:hover{
+      background-color: rgb(92, 154, 185);
+    }
   }
 
   .buttonleft {

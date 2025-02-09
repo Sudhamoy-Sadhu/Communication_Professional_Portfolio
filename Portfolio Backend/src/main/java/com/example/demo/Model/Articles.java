@@ -14,30 +14,29 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "interviews")
+@Table(name ="articles")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Interviews {
+public class Articles {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @NotNull(message = "ArticlesTitle cannot be null")
+    private String articleTitle;
 
-    @NotNull(message = "ReviewsTitle cannot be null")
-    private String interviewTitle;
-
-    @NotNull(message = "ReviewLink cannot be null")
-    private String interviewLink;
+    @NotNull(message = "ArticleLink cannot be null")
+    private String articleLink;
 
     @NotNull(message = "ImageUrl cannot be null")
     private String imageUrl;
 
-    @NotNull(message = "Date of Review cannot be null")
-    private LocalDate dateOfInterview; 
+    @NotNull(message = "Date of Article cannot be null")
+    private LocalDate dateOfArticle; 
 
     @NotNull(message = "Source cannot be null")
     private String sourceName;
-
 }

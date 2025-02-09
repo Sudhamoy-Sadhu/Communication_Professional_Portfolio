@@ -91,6 +91,7 @@
   align-items: center;
   gap: 20px;
   margin-bottom: 15px;
+  /* background: red; */
 }
 
 .link-logos a {
@@ -138,6 +139,10 @@
 }
 .footerbottom p {
   margin: 0;
+}
+.naukri-png{
+  height: 16px;
+  width: 16px;
 }
 
 @media (max-width: 768px) {
