@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import axios from 'axios';  // Import axios for API requests
 import './ContactMeModal.css';
-import { API_CONTACT_ME } from '../../../apiUrl';
+import { API_CONTACT_ME } from '../../../apiUrl';  // Import API endpoint
 
 function ContactMeModal({ onClose }) {
   const [name, setName] = useState('');
@@ -10,40 +10,9 @@ function ContactMeModal({ onClose }) {
   const [captcha, setCaptcha] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const [isLimitReached, setIsLimitReached] = useState(false);
 
-
-  const checkSubmissionLimit = () => {
-    const today = new Date().toLocaleDateString();
-    const lastSubmissionDate = localStorage.getItem('lastSubmissionDate');
-    const submissionCount = parseInt(localStorage.getItem('submissionCount')) || 0;
-
-    if (lastSubmissionDate === today && submissionCount >= 3) {
-      setIsLimitReached(true);
-    } else {
-      setIsLimitReached(false);
-    }
-  };
-
-  // Update submission count in localStorage after successful submission
-  // const updateSubmissionCount = () => {
-  //   const today = new Date().toLocaleDateString();
-  //   const lastSubmissionDate = localStorage.getItem('lastSubmissionDate');
-  //   let submissionCount = parseInt(localStorage.getItem('submissionCount')) || 0;
-
-  //   if (lastSubmissionDate !== today) {
-  //     // Reset count if it's a new day
-  //     localStorage.setItem('lastSubmissionDate', today);
-  //     submissionCount = 0;
-  //   }
-
-  //   submissionCount += 1;
-  //   localStorage.setItem('submissionCount', submissionCount);
-  // };
-
-  // useEffect(() => {
-  //   checkSubmissionLimit();
-  // }, []);
+  // Email validation regex
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,10 +23,22 @@ function ContactMeModal({ onClose }) {
       return;
     }
 
-    if (isLimitReached) {
-      alert(setError('You have reached the maximum submission limit for today.'));
+    // Validate email format
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email address');
       return;
     }
+
+    // Check if the email is already stored in localStorage
+    const storedEmail = localStorage.getItem('userEmail');
+    if (storedEmail === email) {
+      setError('This email has already been submitted.');
+      alert()
+      return;
+    }
+
+    // Store the email in localStorage
+    localStorage.setItem('userEmail', email);
 
     const formData = {
       name,
@@ -66,22 +47,21 @@ function ContactMeModal({ onClose }) {
     };
 
     try {
-      // Make the POST request to your Spring Boot backend
+      // Send the data to the server using Axios
       const response = await axios.post(API_CONTACT_ME, formData);
 
       if (response.status === 200) {
-        // If the form was submitted successfully
         setSuccess('Your message has been sent successfully!');
+        alert("Message sent! Admin will contact you soon!");
         setName('');
         setEmail('');
         setMessage('');
         setCaptcha(false);
         setError('');
-        // updateSubmissionCount(); 
         onClose();
       }
-    } catch (error) {
-      console.error('Error submitting the form:', error);
+    } catch (err) {
+      console.error('Error submitting the form:', err);
       setError('Error sending the message. Please try again.');
     }
   };
@@ -91,10 +71,10 @@ function ContactMeModal({ onClose }) {
       <div className="contact-modal">
         <span className="close-btn" onClick={onClose}>X</span>
         <h2>Contact Shreya Mukherjee</h2>
-        
+
         {success && <p className="success-message">{success}</p>}
         {error && <p className="error-message">{error}</p>}
-        
+
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Your Name</label>

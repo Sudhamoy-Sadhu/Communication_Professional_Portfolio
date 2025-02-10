@@ -14,7 +14,7 @@ public class EmailSenderService {
     @Autowired
     private JavaMailSender mailSender;
 
-    private final String adminEmail = "sudhamoysadhu2004@gmail.com"; 
+    private final String adminEmail = "shreyam2797@gmail.com"; 
 
     public void sendContactFormEmail(String name, String email, String message) throws MessagingException {
         String subject = "New Contact Form Submission";
