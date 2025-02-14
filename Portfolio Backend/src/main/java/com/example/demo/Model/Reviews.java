@@ -15,7 +15,6 @@ public class Reviews {
 
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private Long id;
 
     @NotNull(message = "ReviewsTitle cannot be null")

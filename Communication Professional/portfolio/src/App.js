@@ -8,6 +8,10 @@ import AdminReviewsForm from "./components/Admin/AdminReviews/AdminreviewsForm";
 import AdminInterviewForm from "./components/Admin/AdminInterviews/AdminInterviewsForm";
 import AdminArticlesForm from "./components/Admin/AdminArticles/AdminArticlesForm";
 import Resume from "./components/User/Resume/Resume";
+import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
+import AdminEditTable from "./components/Admin/AdminDashboard/AdminEditTable/AdminEditTable";
+import AdminEditForm from "./components/Admin/AdminDashboard/AdminEditTable/AdminEditForm";
+import AdminDeleteTable from "./components/Admin/AdminDashboard/AdminEditTable/AdminDeleteTable";
 
 
 
@@ -24,6 +28,10 @@ function App() {
         <Route path="/adreviewsForm" element={<AdminReviewsForm />} />  
         <Route path="/adInterviewsForm" element={<AdminInterviewForm />} />
         <Route path="/adArticlesForm" element={<AdminArticlesForm />} />
+        <Route path="/adminDashboard" element={<AdminDashboard />} />
+        <Route path="/adminEditTable" element={<AdminEditTable />} />
+        <Route path="/adminDeleteTable" element={<AdminDeleteTable />} />
+        <Route path="/adminEditForm/:id" element={<AdminEditForm />} />
       </Routes>
     </BrowserRouter>
   );

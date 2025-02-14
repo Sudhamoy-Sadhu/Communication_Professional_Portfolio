@@ -6,6 +6,9 @@ import jakarta.validation.constraints.NotNull;
 
 public class ReviewsDTO {
 
+    
+    private Long id;
+
     @NotNull(message = "ReviewsTitle cannot be null")
     private String reviewTitle;
 
@@ -25,7 +28,8 @@ public class ReviewsDTO {
     public ReviewsDTO() {}
 
     // Constructor with all fields (AllArgsConstructor)
-    public ReviewsDTO(String reviewTitle, String reviewLink, String imageUrl, LocalDate dateOfReview, String sourceName) {
+    public ReviewsDTO(Long id, String reviewTitle, String reviewLink, String imageUrl, LocalDate dateOfReview, String sourceName) {
+        this.id = id;
         this.reviewTitle = reviewTitle;
         this.reviewLink = reviewLink;
         this.imageUrl = imageUrl;
@@ -34,6 +38,13 @@ public class ReviewsDTO {
     }
 
     // Getter and Setter methods
+
+    public Long getId(){
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getReviewTitle() {
         return reviewTitle;

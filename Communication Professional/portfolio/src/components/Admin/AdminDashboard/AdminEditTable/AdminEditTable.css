@@ -1,0 +1,42 @@
+.admin-edit-table-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.admin-edit-table{
+    background: #B8DAFF;
+    width: 100%;
+    border: none;
+}
+.admin-edit-table-body tr{
+    text-align: center;
+
+}
+
+.admin-edit-table-body tr:nth-child(odd){
+    background: #BEE5EB;
+
+}
+.admin-edit-table-head th{
+    background: rgb(14, 33, 82);
+    color: white;
+
+}
+
+.admin-reviews-edit-btn{
+    color: rgb(194, 124, 27);
+    background: none;
+    border: none;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    &:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
