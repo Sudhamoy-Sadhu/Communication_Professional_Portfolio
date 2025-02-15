@@ -5,6 +5,7 @@ import { CiSearch } from "react-icons/ci";
 import { TbTriangleInvertedFilled } from "react-icons/tb";
 import { FaPlug } from "react-icons/fa";
 import axios from "axios";
+import { API_GET_ARTICLES, API_GET_INTERVIEWS, API_GET_REVIEWS } from "../../../../apiUrl";
 
 function ContentHeader({
   reviews,
@@ -38,7 +39,7 @@ function ContentHeader({
   // Fetch Reviews data
   const fetchReviews = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/reviews/getAllReviews");
+      const response = await axios.get(API_GET_REVIEWS);
       const data = response.data.map((review) => ({
         ...review,
         reviewTitle: review.reviewTitle || "",
@@ -58,7 +59,7 @@ function ContentHeader({
   // Fetch Articles data
   const fetchArticles = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/articles/getAllArticles");
+      const response = await axios.get(API_GET_ARTICLES);
       const data = response.data.map((article) => ({
         ...article,
         articleTitle: article.articleTitle || "",
@@ -77,7 +78,7 @@ function ContentHeader({
   // Fetch Interviews data
   const fetchInterviews = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/interviews/getallinterviews");
+      const response = await axios.get(API_GET_INTERVIEWS);
       const data = response.data.map((interview) => ({
         ...interview,
         interviewTitle: interview.interviewTitle || "",
