@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://shreya-mukherjee.onrender.com';
 
 export const API_GET_REVIEWS = `${API_BASE_URL}/reviews/getAllReviews`;
 export const API_GET_INTERVIEWS = `${API_BASE_URL}/interviews/getallinterviews`;
