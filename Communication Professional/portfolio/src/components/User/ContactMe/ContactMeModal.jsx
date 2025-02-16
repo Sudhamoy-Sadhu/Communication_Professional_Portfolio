@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios';  // Import axios for API requests
+import axios from 'axios';
 import './ContactMeModal.css';
-import { API_CONTACT_ME } from '../../../apiUrl';  // Import API endpoint
+import { API_CONTACT_ME } from '../../../apiUrl';
+import ReCAPTCHA from "react-google-recaptcha";
 
 function ContactMeModal({ onClose }) {
   const [name, setName] = useState('');
@@ -33,7 +34,6 @@ function ContactMeModal({ onClose }) {
     const storedEmail = localStorage.getItem('userEmail');
     if (storedEmail === email) {
       setError('This email has already been submitted.');
-      alert()
       return;
     }
 
@@ -65,6 +65,11 @@ function ContactMeModal({ onClose }) {
       setError('Error sending the message. Please try again.');
     }
   };
+
+  function onChange(value) {
+    console.log("Captcha value:", value);
+    setCaptcha(value ? true : false);
+  }
 
   return (
     <div className="modal-overlay">
@@ -111,16 +116,20 @@ function ContactMeModal({ onClose }) {
 
           <div className="form-group captcha">
             <label>
-              <input
-                type="checkbox"
-                checked={captcha}
-                onChange={(e) => setCaptcha(e.target.checked)}
+              <ReCAPTCHA
+                sitekey="6LehAdkqAAAAAEjQO3qzIsHOuQtX_47bxY0f37NL"
+                onChange={onChange}
               />
-              I am not a robot
             </label>
           </div>
 
-          <button type="submit" className="submit-btn">Send</button>
+          <button
+            type="submit"
+            className="submit-btn"
+            disabled={!captcha}
+          >
+            Send
+          </button>
         </form>
       </div>
     </div>

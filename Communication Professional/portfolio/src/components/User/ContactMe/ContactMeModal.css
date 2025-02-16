@@ -17,7 +17,7 @@
   padding: 20px;
   border-radius: 10px;
   width: 500px;
-  height: 550px;
+  height: 590px;
   max-width: 100%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -110,6 +110,6 @@
 
 .contact-modal .captcha {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
