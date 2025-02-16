@@ -17,7 +17,7 @@ function Footer() {
                         <div className="footer-menu">
                             <a href="/">Home</a>
                             <a href="/resume">Resume</a>
-                            <a href="" onClick={() => setModalOpen(true)}>Contact Me</a>
+                            <a onClick={() => setModalOpen(true)}>Contact Me</a>
                         </div>
                         <div className="footer-social-links">
                             <p>Social</p>
