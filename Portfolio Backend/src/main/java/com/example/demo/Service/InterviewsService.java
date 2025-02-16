@@ -2,6 +2,7 @@ package com.example.demo.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,7 @@ public class InterviewsService {
         List<InterviewsDTO> interviewsDTOList = new ArrayList<>();
         for(Interviews interviews1 : interviews){
             InterviewsDTO dto = new InterviewsDTO();
+            dto.setId(interviews1.getId());
             dto.setInterviewTitle(interviews1.getInterviewTitle());
             dto.setInterviewLink(interviews1.getInterviewLink());
             dto.setImageUrl(interviews1.getImageUrl());
@@ -42,5 +44,39 @@ public class InterviewsService {
             interviewsDTOList.add(dto);
         }
             return interviewsDTOList;            
+    }
+
+    public Optional<InterviewsDTO> getInterviewById(Long id) {
+        Optional<Interviews> optionalInterview = interviewsRepo.findById(id);
+    
+        return optionalInterview.map(interview -> {
+            InterviewsDTO dto = new InterviewsDTO();
+            dto.setId(interview.getId());
+            dto.setInterviewTitle(interview.getInterviewTitle());
+            dto.setInterviewLink(interview.getInterviewLink());
+            dto.setImageUrl(interview.getImageUrl());
+            dto.setDateOfInterview(interview.getDateOfInterview());
+            dto.setSourceName(interview.getSourceName());
+            return dto;
+        });
+    }
+
+
+    public Interviews updateInterview(Long id, InterviewsDTO updatedInterviewDTO) {
+        Optional<Interviews> optionalInterview = interviewsRepo.findById(id);
+        
+        return optionalInterview.map(interview -> { 
+            interview.setInterviewTitle(updatedInterviewDTO.getInterviewTitle());
+            interview.setInterviewLink(updatedInterviewDTO.getInterviewLink());
+            interview.setImageUrl(updatedInterviewDTO.getImageUrl());
+            interview.setDateOfInterview(updatedInterviewDTO.getDateOfInterview());
+            interview.setSourceName(updatedInterviewDTO.getSourceName());
+            return interviewsRepo.save(interview);
+        }).orElseThrow(() -> new RuntimeException("Review not found with ID: " + id));
+    }
+
+
+    public void deleteInterviewsById(Long id){
+        interviewsRepo.deleteById(id);
     }
 }

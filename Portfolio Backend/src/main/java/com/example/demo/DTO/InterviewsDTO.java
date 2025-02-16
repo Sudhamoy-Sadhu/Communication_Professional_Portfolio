@@ -14,6 +14,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class InterviewsDTO {
 
+    private Long id;
+
     @NotNull(message = "ReviewsTitle cannot be null")
     private String interviewTitle;
 

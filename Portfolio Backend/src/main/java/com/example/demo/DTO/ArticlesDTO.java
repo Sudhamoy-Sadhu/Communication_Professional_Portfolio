@@ -14,6 +14,8 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class ArticlesDTO {
+
+    private Long id;
     
     @NotNull(message = "Articles Title cannot be null")
     private String articleTitle;
