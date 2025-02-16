@@ -78,6 +78,9 @@
 .submit-btn:hover {
   background-color: #005bb5;
 }
+.submit-btn:disabled{
+  background-color: #8bc2f9;
+}
 
 .contact-modal .close-btn {
   background-color: white;
