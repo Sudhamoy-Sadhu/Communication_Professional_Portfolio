@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./AdminEditTable.css";
+import "../AdminEditTable.css";
 import { FaEdit } from "react-icons/fa";
 import { API_GET_INTERVIEWS } from "../../../../../apiUrl";
 
@@ -32,7 +32,7 @@ const InterviewEditTable = () => {
 
     return (
         <div className="admin-edit-table-main">
-            <h1>Reviews List</h1>
+            <h1>Interviews List</h1>
             <table className="admin-edit-table" cellPadding="10">
                 <thead className="admin-edit-table-head">
                     <tr>

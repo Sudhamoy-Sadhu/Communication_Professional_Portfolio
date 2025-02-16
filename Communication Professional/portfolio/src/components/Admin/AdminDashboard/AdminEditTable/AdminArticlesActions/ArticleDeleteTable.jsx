@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./AdminDeleteTable.css";
+import "../AdminDeleteTable.css";
 import { FaTrashAlt } from "react-icons/fa";
 import { API_DELETE_ARTICLES, API_GET_ARTICLES } from "../../../../../apiUrl";
 

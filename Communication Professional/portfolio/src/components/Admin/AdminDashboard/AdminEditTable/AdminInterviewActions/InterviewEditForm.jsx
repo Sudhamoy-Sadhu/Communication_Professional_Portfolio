@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./AdminEditForm.css"
+import "../AdminEditForm.css"
 import { useParams, useNavigate } from "react-router-dom";
 import { API_GET_INTERVIEWS_BYID, API_PUT_INTERVIEWS } from "../../../../../apiUrl";
 

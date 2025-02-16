@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./AdminEditTable.css";
+import "../AdminEditTable.css";
 import { FaEdit } from "react-icons/fa";
-import { API_GET_ARTICLES, API_GET_INTERVIEWS } from "../../../../../apiUrl";
+import { API_GET_ARTICLES } from "../../../../../apiUrl";
 
 
 const ArticleEditTable = () => {
