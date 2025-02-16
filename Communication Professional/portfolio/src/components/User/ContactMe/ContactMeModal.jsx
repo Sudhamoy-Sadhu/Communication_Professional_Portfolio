@@ -126,7 +126,7 @@ function ContactMeModal({ onClose }) {
           <button
             type="submit"
             className="submit-btn"
-            disabled={!captcha}
+            disabled={!captcha || !name || !email || !message}
           >
             Send
           </button>
