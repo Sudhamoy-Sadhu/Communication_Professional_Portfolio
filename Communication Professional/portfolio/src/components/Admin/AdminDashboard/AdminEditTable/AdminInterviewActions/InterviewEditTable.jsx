@@ -47,10 +47,10 @@ const InterviewEditTable = () => {
                 <tbody className="admin-edit-table-body">
                     {reviews.map((review, index) => (
                         <tr key={review.id || index + 1}>
-                            <td>{review.reviewTitle}</td>
-                            <td><a href={review.reviewLink} target="_blank" rel="noopener noreferrer">View</a></td>
+                            <td>{review.interviewTitle}</td>
+                            <td><a href={review.interviewLink} target="_blank" rel="noopener noreferrer">View</a></td>
                             <td><img src={review.imageUrl} alt="Review" width="50" /></td>
-                            <td>{review.dateOfReview}</td>
+                            <td>{review.dateOfInterview}</td>
                             <td>{review.sourceName}</td>
                             <td>
                                 <button onClick={() => handleEdit(review.id || index + 1)} className="admin-reviews-edit-btn"><FaEdit/></button>

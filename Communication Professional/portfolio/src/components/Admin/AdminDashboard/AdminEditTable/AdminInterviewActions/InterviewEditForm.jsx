@@ -47,11 +47,11 @@ const InterviewEditForm = () => {
                 <h2>Edit Interview</h2>
                 <div className="form-fields">
                     <label>Title:</label>
-                    <input type="text" name="reviewTitle" value={review.interviewTitle} onChange={handleChange} required />
+                    <input type="text" name="interviewTitle" value={review.interviewTitle} onChange={handleChange} required />
                 </div>
                 <div className="form-fields">
                     <label>Link:</label>
-                    <input type="text" name="reviewLink" value={review.interviewLink} onChange={handleChange} required />
+                    <input type="text" name="interviewLink" value={review.interviewLink} onChange={handleChange} required />
 
                 </div>
                 <div className="form-fields">
@@ -61,7 +61,7 @@ const InterviewEditForm = () => {
                 </div>
                 <div className="form-fields">
                     <label>Date:</label>
-                    <input type="date" name="dateOfReview" value={review.dateOfInterview} onChange={handleChange} required />
+                    <input type="date" name="dateOfInterview" value={review.dateOfInterview} onChange={handleChange} required />
                 </div>
                 <div className="form-fields">
                     <label>Source Name:</label>
