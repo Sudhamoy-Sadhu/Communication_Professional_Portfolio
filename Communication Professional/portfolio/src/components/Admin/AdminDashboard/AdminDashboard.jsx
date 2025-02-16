@@ -36,8 +36,8 @@ function AdminDashboard() {
                             </div>
                             <ul className="reviews-details-actionbtn">
                                 <li className="plus" onClick={() => navigate("/adInterviewsForm")}><FaPlus /></li>
-                                <li className="edit" onClick={()=> navigate("/adminEditTable")}><FaEdit /></li>
-                                <li className="trash" onClick={()=> navigate("/adminDeleteTable")}><FaTrashAlt /></li>
+                                <li className="edit" onClick={()=> navigate("/interviewEditTable")}><FaEdit /></li>
+                                <li className="trash" onClick={()=> navigate("/interviewDeleteTable")}><FaTrashAlt /></li>
                             </ul>
                         </div>
                     </div>
@@ -49,8 +49,8 @@ function AdminDashboard() {
                             </div>
                             <ul className="reviews-details-actionbtn">
                                 <li className="plus" onClick={() => navigate("/adArticlesForm")}><FaPlus /></li>
-                                <li className="edit"><FaEdit /></li>
-                                <li className="trash"><FaTrashAlt /></li>
+                                <li className="edit" onClick={() => navigate("/articleEditTable")}><FaEdit /></li>
+                                <li className="trash" onClick={() => navigate("/articleDeleteTable")}><FaTrashAlt /></li>
                             </ul>
                         </div>
                     </div>

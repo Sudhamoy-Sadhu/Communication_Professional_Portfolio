@@ -12,6 +12,12 @@ import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 import AdminEditTable from "./components/Admin/AdminDashboard/AdminEditTable/AdminEditTable";
 import AdminEditForm from "./components/Admin/AdminDashboard/AdminEditTable/AdminEditForm";
 import AdminDeleteTable from "./components/Admin/AdminDashboard/AdminEditTable/AdminDeleteTable";
+import InterviewEditForm from "./components/Admin/AdminDashboard/AdminEditTable/AdminInterviewActions/InterviewEditForm";
+import InterviewDeleteTable from "./components/Admin/AdminDashboard/AdminEditTable/AdminInterviewActions/InterviewDeleteTable";
+import InterviewEditTable from "./components/Admin/AdminDashboard/AdminEditTable/AdminInterviewActions/InterviewEditTable";
+import ArticleEditTable from "./components/Admin/AdminDashboard/AdminEditTable/AdminArticlesActions/ArticleEditTable";
+import ArticleEditForm from "./components/Admin/AdminDashboard/AdminEditTable/AdminArticlesActions/ArticelEditForm";
+import ArticleDeleteTable from "./components/Admin/AdminDashboard/AdminEditTable/AdminArticlesActions/ArticleDeleteTable";
 
 
 
@@ -30,8 +36,14 @@ function App() {
         <Route path="/adArticlesForm" element={<AdminArticlesForm />} />
         <Route path="/adminDashboard" element={<AdminDashboard />} />
         <Route path="/adminEditTable" element={<AdminEditTable />} />
-        <Route path="/adminDeleteTable" element={<AdminDeleteTable />} />
         <Route path="/adminEditForm/:id" element={<AdminEditForm />} />
+        <Route path="/adminDeleteTable" element={<AdminDeleteTable />} />
+        <Route path="/interviewEditTable" element={<InterviewEditTable />} />
+        <Route path="/interviewEditForm/:id" element={<InterviewEditForm />} />
+        <Route path="/interviewDeleteTable" element={<InterviewDeleteTable />} />
+        <Route path="/articleEditTable" element={<ArticleEditTable />} />
+        <Route path="/articleEditForm/:id" element={<ArticleEditForm />} />
+        <Route path="/articleDeleteTable" element={<ArticleDeleteTable />} />
       </Routes>
     </BrowserRouter>
   );
