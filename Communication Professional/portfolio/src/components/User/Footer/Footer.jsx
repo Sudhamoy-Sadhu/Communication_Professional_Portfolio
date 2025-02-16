@@ -12,7 +12,7 @@ function Footer() {
                 <div className="footertop">
                     <div className="leftF">
                         <img className="profile-pic-footer"></img>
-                        <span>A media professional with 5+ years of experience in writing, editing, and publishing content across print and digital platform.</span>
+                        <span>A media professional with 5+ years of experience in writing, editing, and publishing content across print and digital platforms.</span>
                     </div>
                     <div className="rightF">
                         <div className="footer-menu">
