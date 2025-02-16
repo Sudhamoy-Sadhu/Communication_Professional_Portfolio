@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AdminLogin.css"
 
 function AdminLogin() {
+    useState(() => {
+        document.title = "Shreya Mukherjee - Login"
+    }, [])
     return (
         <>
             <div className="loginMain">

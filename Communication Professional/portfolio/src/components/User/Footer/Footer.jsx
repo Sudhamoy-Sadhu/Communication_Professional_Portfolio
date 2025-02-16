@@ -23,8 +23,8 @@ function Footer() {
                             <p>Social</p>
                             <div className="link-logos">
                                 <a className="same-same" href="https://www.linkedin.com/in/shreya-mukherjee-9a1829142/" target="blank"><FaLinkedinIn /></a>
-                                <a className="same-same" href=""><FaWordpress/></a>
-                                <a className="same-same" href=""><img className="naukri-png" src="../assets/naukri.png" alt="NaukriLogo"/></a>
+                                <a className="same-same" href="https://wordpress.com/view/shreyamwrites.wordpress.com" target="blank"><FaWordpress/></a>
+                                <a className="same-same" href="https://www.naukri.com/mnjuser/profile" target="blank"><img className="naukri-png" src="../assets/naukri.png" alt="NaukriLogo"/></a>
                             </div>
                         </div>
                     </div>
