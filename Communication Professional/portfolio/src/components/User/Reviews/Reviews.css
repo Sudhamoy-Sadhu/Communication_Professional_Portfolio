@@ -135,10 +135,13 @@
   .ReviewsContent h1{
     display: flex;
     justify-content: center;
-    align-items: left;
+    align-items: center;
     flex-direction: column;
   }
   .mainPic{
     width: 100%;
+  }
+  .gotolink{
+    text-align: left;
   }
 }
