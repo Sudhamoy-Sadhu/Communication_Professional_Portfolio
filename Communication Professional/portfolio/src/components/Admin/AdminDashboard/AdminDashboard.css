@@ -76,3 +76,18 @@
 .reviews-details-actionbtn .trash:hover{
     transform: scale(1.1);
 }
+.logout-admin{
+    background: rgb(223, 75, 75);
+    color: aliceblue;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    position: absolute;
+    top: 140px;
+    right: 80px;
+    cursor: pointer;
+    &:hover{
+        background: rgb(229, 131, 131);
+    }
+}
