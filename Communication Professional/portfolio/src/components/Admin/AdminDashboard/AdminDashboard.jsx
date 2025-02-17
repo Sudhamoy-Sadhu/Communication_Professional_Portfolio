@@ -8,9 +8,15 @@ import { useNavigate } from "react-router-dom";
 function AdminDashboard() {
     const navigate = useNavigate();
 
+    const handleLogout = () => {
+        localStorage.removeItem("adminUsername"); // Clear stored username
+        navigate("/adlogin"); // Redirect to login page
+      };
+
     return (
         <>
             <div className="addashboardmain">
+                <div className="logout-admin" onClick={handleLogout}>Logout</div>
                 <div className="welcomeSh">
                     <h1>Welcome Shreya Mukherjee!</h1>
                 </div>

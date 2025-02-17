@@ -18,6 +18,7 @@ import InterviewEditTable from "./components/Admin/AdminDashboard/AdminEditTable
 import ArticleEditTable from "./components/Admin/AdminDashboard/AdminEditTable/AdminArticlesActions/ArticleEditTable";
 import ArticleEditForm from "./components/Admin/AdminDashboard/AdminEditTable/AdminArticlesActions/ArticelEditForm";
 import ArticleDeleteTable from "./components/Admin/AdminDashboard/AdminEditTable/AdminArticlesActions/ArticleDeleteTable";
+import ProtectedRoutes from "./utils/ProtectedRoutes";
 
 
 
@@ -30,6 +31,9 @@ function App() {
         <Route path="/articles" element={<ArticlesPage />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/adlogin" element={<AdminLogin />} />
+
+
+      <Route element={<ProtectedRoutes/>}>
 
         <Route path="/adreviewsForm" element={<AdminReviewsForm />} />  
         <Route path="/adInterviewsForm" element={<AdminInterviewForm />} />
@@ -44,6 +48,9 @@ function App() {
         <Route path="/articleEditTable" element={<ArticleEditTable />} />
         <Route path="/articleEditForm/:id" element={<ArticleEditForm />} />
         <Route path="/articleDeleteTable" element={<ArticleDeleteTable />} />
+      
+      </Route>
+
       </Routes>
     </BrowserRouter>
   );
