@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 import "./AdminDashboard.css";
 import { FaPlus } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { API_GET_TOTAL_REVIEWS } from "../../../apiUrl";
 
 function AdminDashboard() {
+    const [totalReviews, setTotalReviews] = useState("");
+
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        localStorage.removeItem("adminUsername"); // Clear stored username
-        navigate("/adlogin"); // Redirect to login page
+        localStorage.removeItem("adminUsername");
+        navigate("/adlogin");
       };
+
+      useEffect(() => {
+        const totalReviews = async () => {
+          try {
+            const response = await axios.get(API_GET_TOTAL_REVIEWS);
+            setTotalReviews(response.data);
+          } catch (error) {
+            console.error("Error fetching total number of reviews:", error);
+          }
+        };
+    
+        totalReviews();
+      }, []);
 
     return (
         <>
@@ -25,7 +43,7 @@ function AdminDashboard() {
                         <div className="adminReviewsCard">
                             <div className="heading-reviews" onClick={() => navigate("/")}>
                                 <h1>Reviews Detail</h1>
-                                <h3>Total Number of Reviews:</h3>
+                                <h3>Total Number of Reviews: {totalReviews}</h3>
                             </div>
                             <ul className="reviews-details-actionbtn">
                                 <li className="plus" onClick={() => navigate("/adreviewsForm")}><FaPlus /></li>

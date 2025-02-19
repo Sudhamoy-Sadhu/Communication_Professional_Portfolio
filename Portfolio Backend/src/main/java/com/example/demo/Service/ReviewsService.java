@@ -80,4 +80,8 @@ public class ReviewsService {
         reviewsRepo.deleteById(id);
     }
 
+    public long getTotalReviews(){
+        return reviewsRepo.count();
+    }
+
 }

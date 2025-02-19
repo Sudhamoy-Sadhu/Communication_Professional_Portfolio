@@ -9,6 +9,7 @@ export const API_SAVE_REVIEWS = `${API_BASE_URL}/reviews/save`;
 export const API_GET_REVIEWS_BYID = (id) => `${API_BASE_URL}/reviews/${id}`;
 export const API_PUT_REVIEWS = (id) => `${API_BASE_URL}/reviews/update/${id}`;
 export const API_DELETE_REVIEWS = (id) => `${API_BASE_URL}/reviews/delete/${id}`;
+export const API_GET_TOTAL_REVIEWS = `${API_BASE_URL}/reviews/total`;
 
 // Interviews API
 export const API_GET_INTERVIEWS = `${API_BASE_URL}/interviews/getallinterviews`;

@@ -65,4 +65,14 @@ public class ReviewsController {
         }
     }
 
+
+    @GetMapping("/total")
+    public ResponseEntity<?> getTotalReviews(){
+        try{
+            return ResponseEntity.ok(reviewsService.getTotalReviews());
+        }catch (EmptyResultDataAccessException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Total reviews not found");
+        }
+    }
+
 }

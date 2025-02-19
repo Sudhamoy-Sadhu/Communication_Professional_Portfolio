@@ -7,5 +7,6 @@ import com.example.demo.Model.Reviews;
 
 @Repository
 public interface ReviewsRepo extends JpaRepository<Reviews, Long> {
+    long count();
 }
 
