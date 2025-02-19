@@ -43,7 +43,7 @@ function AdminDashboard() {
                         <div className="adminReviewsCard">
                             <div className="heading-reviews" onClick={() => navigate("/")}>
                                 <h1>Reviews Detail</h1>
-                                <h3>Total Number of Reviews:  {totalReviews}</h3>
+                                <h3>Total Number of Reviews: {totalReviews}</h3>
                             </div>
                             <ul className="reviews-details-actionbtn">
                                 <li className="plus" onClick={() => navigate("/adreviewsForm")}><FaPlus /></li>
