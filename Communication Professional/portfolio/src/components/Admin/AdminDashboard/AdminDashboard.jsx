@@ -22,7 +22,7 @@ function AdminDashboard() {
         const totalReviews = async () => {
           try {
             const response = await axios.get(API_GET_TOTAL_REVIEWS);
-            setTotalReviews(response.data.totalReviews);
+            setTotalReviews(response.data);
           } catch (error) {
             console.error("Error fetching total number of reviews:", error);
           }
