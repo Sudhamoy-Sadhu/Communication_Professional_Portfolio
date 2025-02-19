@@ -79,4 +79,8 @@ public class InterviewsService {
     public void deleteInterviewsById(Long id){
         interviewsRepo.deleteById(id);
     }
+
+    public long gettotalInterviews(){
+        return interviewsRepo.count();
+    }
 }

@@ -25,6 +25,7 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import jakarta.validation.ValidationException;
 
+
 @RestController
 @RequestMapping("/interviews")
 @CrossOrigin(origins = "${frontend.url}")
@@ -84,4 +85,14 @@ public class InterviewsController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Cannot delete Interview by id");
         }
     }
+
+    @GetMapping("/total")
+    public ResponseEntity<?> gettotalInterview() {
+        try {
+            return ResponseEntity.ok(interviewsService.gettotalInterviews());
+        } catch (EmptyResultDataAccessException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Could not get Total number of Interviews");
+        }
+    }
+    
 }

@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 
 
+
 @RestController
 @RequestMapping("/articles")
 @CrossOrigin(origins = "${frontend.url}")
@@ -86,4 +87,15 @@ public class ArticlesController {
         }
     }
       
+
+    @GetMapping("/total")
+    public ResponseEntity<?> getTotalArticleCount() {
+        try {
+            
+            return ResponseEntity.ok(articlesService.getTotalArticleCount());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Can not find article count");
+        }
+    }
+    
 }

@@ -10,4 +10,5 @@ import com.example.demo.Model.Interviews;
 @Repository
 public interface InterviewsRepo extends JpaRepository<Interviews, Long> {
     List<Interviews> getReviewsById(Long id);
+    long count();
 }

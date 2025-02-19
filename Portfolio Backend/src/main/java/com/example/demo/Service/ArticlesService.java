@@ -78,4 +78,8 @@ public class ArticlesService {
     public void deleteIArticlesById(Long id){
         articlesRepo.deleteById(id);
     }
+
+    public long getTotalArticleCount(){
+        return articlesRepo.count();
+    }
 }

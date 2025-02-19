@@ -10,4 +10,5 @@ import com.example.demo.Model.Articles;
 @Repository
 public interface ArticlesRepo extends JpaRepository<Articles, Long> {
     List<Articles> getArticlesByid(Long id);
+    long count();
 }

@@ -17,6 +17,7 @@ export const API_SAVE_INTERVIEWS = `${API_BASE_URL}/interviews/save`;
 export const API_GET_INTERVIEWS_BYID = (id) => `${API_BASE_URL}/interviews/${id}`;
 export const API_PUT_INTERVIEWS = (id) => `${API_BASE_URL}/interviews/update/${id}`;
 export const API_DELETE_INTERVIEWS = (id) => `${API_BASE_URL}/interviews/delete/${id}`;
+export const API_GET_TOTAL_INTERVIEWS = `${API_BASE_URL}/interviews/total`;
 
 // Articles API
 export const API_GET_ARTICLES = `${API_BASE_URL}/articles/getAllArticles`;
@@ -24,3 +25,4 @@ export const API_SAVE_ARTICLES = `${API_BASE_URL}/articles/save`;
 export const API_GET_ARTICLES_BYID = (id) => `${API_BASE_URL}/articles/${id}`;
 export const API_PUT_ARTICLES = (id) => `${API_BASE_URL}/articles/update/${id}`;
 export const API_DELETE_ARTICLES = (id) => `${API_BASE_URL}/articles/delete/${id}`;
+export const API_GET_TOTAL_ARTICLES = `${API_BASE_URL}/articles/total`;

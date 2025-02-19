@@ -6,10 +6,12 @@ import { FaPlus } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { API_GET_TOTAL_REVIEWS } from "../../../apiUrl";
+import { API_GET_TOTAL_ARTICLES, API_GET_TOTAL_INTERVIEWS, API_GET_TOTAL_REVIEWS } from "../../../apiUrl";
 
 function AdminDashboard() {
     const [totalReviews, setTotalReviews] = useState("");
+    const [totalInterviews, setTotalInterviews] = useState("");
+    const [totalRArticles, setTotalArticles] = useState("");
 
     const navigate = useNavigate();
 
@@ -31,6 +33,34 @@ function AdminDashboard() {
         totalReviews();
       }, []);
 
+
+      useEffect(() => {
+        const totalInterviews = async () => {
+          try {
+            const response = await axios.get(API_GET_TOTAL_INTERVIEWS);
+            setTotalInterviews(response.data);
+          } catch (error) {
+            console.error("Error fetching total number of reviews:", error);
+          }
+        };
+    
+        totalInterviews();
+      }, []);
+
+
+      useEffect(() => {
+        const totalArticles = async () => {
+          try {
+            const response = await axios.get(API_GET_TOTAL_ARTICLES);
+            setTotalArticles(response.data);
+          } catch (error) {
+            console.error("Error fetching total number of reviews:", error);
+          }
+        };
+    
+        totalArticles();
+      }, []);
+
     return (
         <>
             <div className="addashboardmain">
@@ -43,7 +73,7 @@ function AdminDashboard() {
                         <div className="adminReviewsCard">
                             <div className="heading-reviews" onClick={() => navigate("/")}>
                                 <h1>Reviews Detail</h1>
-                                <h3>Total Number of Reviews: {totalReviews}</h3>
+                                <h3>Total Number of Reviews:  {totalReviews}</h3>
                             </div>
                             <ul className="reviews-details-actionbtn">
                                 <li className="plus" onClick={() => navigate("/adreviewsForm")}><FaPlus /></li>
@@ -56,7 +86,7 @@ function AdminDashboard() {
                         <div className="adminReviewsCard">
                             <div className="heading-reviews" onClick={() => navigate("/interviews")}>
                                 <h1>Interviews Detail</h1>
-                                <h3>Total Number of Interviews:</h3>
+                                <h3>Total Number of Interviews:  {totalInterviews}</h3>
                             </div>
                             <ul className="reviews-details-actionbtn">
                                 <li className="plus" onClick={() => navigate("/adInterviewsForm")}><FaPlus /></li>
@@ -69,7 +99,7 @@ function AdminDashboard() {
                         <div className="adminReviewsCard">
                             <div className="heading-reviews" onClick={() => navigate("/articles")}>
                                 <h1>Articles Detail</h1>
-                                <h3>Total Number of Articles:</h3>
+                                <h3>Total Number of Articles:  {totalRArticles}</h3>
                             </div>
                             <ul className="reviews-details-actionbtn">
                                 <li className="plus" onClick={() => navigate("/adArticlesForm")}><FaPlus /></li>
