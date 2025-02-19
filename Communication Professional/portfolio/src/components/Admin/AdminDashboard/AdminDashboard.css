@@ -91,3 +91,7 @@
         background: rgb(229, 131, 131);
     }
 }
+
+#total-Reviews{
+    color: rgb(255, 0, 140) !important;
+}
