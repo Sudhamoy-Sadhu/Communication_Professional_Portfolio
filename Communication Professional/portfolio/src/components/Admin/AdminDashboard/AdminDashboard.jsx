@@ -11,7 +11,7 @@ import { API_GET_TOTAL_ARTICLES, API_GET_TOTAL_INTERVIEWS, API_GET_TOTAL_REVIEWS
 function AdminDashboard() {
     const [totalReviews, setTotalReviews] = useState("");
     const [totalInterviews, setTotalInterviews] = useState("");
-    const [totalRArticles, setTotalArticles] = useState("");
+    const [totalArticles, setTotalArticles] = useState("");
 
     const navigate = useNavigate();
 
@@ -40,7 +40,7 @@ function AdminDashboard() {
             const response = await axios.get(API_GET_TOTAL_INTERVIEWS);
             setTotalInterviews(response.data);
           } catch (error) {
-            console.error("Error fetching total number of reviews:", error);
+            console.error("Error fetching total number of Interviews:", error);
           }
         };
     
@@ -54,7 +54,7 @@ function AdminDashboard() {
             const response = await axios.get(API_GET_TOTAL_ARTICLES);
             setTotalArticles(response.data);
           } catch (error) {
-            console.error("Error fetching total number of reviews:", error);
+            console.error("Error fetching total number of Articles:", error);
           }
         };
     
@@ -99,7 +99,7 @@ function AdminDashboard() {
                         <div className="adminReviewsCard">
                             <div className="heading-reviews" onClick={() => navigate("/articles")}>
                                 <h1>Articles Detail</h1>
-                                <h3>Total Number of Articles:  {totalRArticles}</h3>
+                                <h3>Total Number of Articles:  {totalArticles}</h3>
                             </div>
                             <ul className="reviews-details-actionbtn">
                                 <li className="plus" onClick={() => navigate("/adArticlesForm")}><FaPlus /></li>
