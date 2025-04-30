@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 import "./Resume.css"
 
 function Resume() {
+    
     useEffect(() =>{
         document.title = "Shreya Mukherjee - Resume"
     }, [])
