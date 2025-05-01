@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "../Reviews/Reviews.css";
 import { FiExternalLink } from "react-icons/fi";
 import ContentHeader from "../HeaderComponent/ContentHeader/ContentHeader";
-import { API_GET_ARTICLES } from "../../../apiUrl";
+import articlesData from "../../User/articles.json"; // Import the JSON file
+
+import "../Reviews/Reviews.css";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -17,67 +17,54 @@ function Articles() {
     return formattedDate;
   };
 
-  // Fetch articles data from the backend
+  // Fetch articles data from the JSON file
   useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const response = await axios.get(API_GET_ARTICLES);
-        console.log("API Response:", response);
-        setArticles(response.data);
-        setFilteredArticles(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching Articles:", error);
-        setIsLoading(false);
-      }
-    };
-
-    fetchArticles();
+    setArticles(articlesData);
+    setFilteredArticles(articlesData);
+    setIsLoading(false);
   }, []);
 
   return (
-    <>
-      <div className="ReviewsMain">
-        <div className="Reviewsbox">
-          {/* Ensure ContentHeader component accepts articles and setFilteredArticles props */}
-          <ContentHeader
-            articles={articles}
-            setFilteredArticles={setFilteredArticles}
-          />
-          <div className="all-reviews">
-            {isLoading ? (
-              <p>Loading articles...</p>
-            ) : (
-              filteredArticles.map((article) => (
-                <div key={article.id} className="ReviewsContent">
-                  <a href={article.articleLink} target="_blank" rel="noopener noreferrer">
-                    <img
-                      className="mainPic"
-                      src={article.imageUrl} 
-                      alt={article.articleTitle}
-                    />
-                    <h1>{article.articleTitle}</h1>
+    <div className="ReviewsMain">
+      <div className="Reviewsbox">
+        {/* Ensure ContentHeader component accepts articles and setFilteredArticles props */}
+        <ContentHeader
+          articles={articles}
+          setFilteredArticles={setFilteredArticles}
+        />
+        <div className="all-reviews">
+          {isLoading ? (
+            <p>Loading articles...</p>
+          ) : (
+            filteredArticles.map((article) => (
+              <div key={article.id} className="ReviewsContent">
+                <a href={article.articleLink} target="_blank" rel="noopener noreferrer">
+                  <img
+                    className="mainPic"
+                    src={article.imageUrl}
+                    alt={article.articleTitle}
+                  />
+                  <h1>{article.articleTitle}</h1>
+                </a>
+                <span className="gotolink">
+                  <img className="nlogo" src="./assets/newsbyteslogo.png" alt="source" />
+                  <span className="dateofReview">{formatDate(article.dateOfArticle)}&nbsp;</span> - 
+                  <span className="articalAt">&nbsp; &nbsp;Article at &nbsp; <b>{article.sourceName}</b></span>
+                  <a
+                    href={article.articleLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nlg"
+                  >
+                    <FiExternalLink />
                   </a>
-                  <span className="gotolink">
-                    <img className="nlogo" src="./assets/newsbyteslogo.png" alt="source" />
-                    <span className="dateofReview">{formatDate(article.dateOfArticle)}&nbsp;</span> - 
-                    <span className="articalAt">&nbsp; &nbsp;Article at &nbsp; <b>{article.sourceName}</b></span>
-                    <a
-                      href={article.articleLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="nlg"
-                    >
-                      <FiExternalLink />
-                    </a>
-                  </span>
-                </div>
-              ))
-            )}
-          </div>
+                </span>
+              </div>
+            ))
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
