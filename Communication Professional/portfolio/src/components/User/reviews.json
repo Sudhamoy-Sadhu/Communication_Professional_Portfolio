@@ -1,84 +1,90 @@
 [
-    {
-      "id": 1,
-      "reviewTitle": "'Gangubai Kathiawadi' review: Alia is mesmerizing but story lacks plenitude",
-      "reviewLink": "https://www.newsbytesapp.com/news/entertainment/gangubai-kathiawadi-review-alia-bhatt-is-breathtaking/story",
-      "imageUrl": "https://i.cdn.newsbytesapp.com/images/l60320220225143042.jpeg?tr=w-720",
-      "dateOfReview": "2022-02-25",
-      "sourceName": "newsbytesapp.com"
-    },
-    {
-      "id": 2,
-      "reviewTitle": "'Bhoot Police' is fun and sometimes it's all that matters",
-      "reviewLink": "https://www.newsbytesapp.com/news/entertainment/bhoot-police-review-it-is-mostly-fun/story",
-      "imageUrl": "https://i.cdn.newsbytesapp.com/images/l15820210910154958.jpeg?tr=w-720",
-      "dateOfReview": "2021-09-10",
-      "sourceName": "newsbytesapp.com"
-    },
-    {
-      "id": 3,
-      "reviewTitle": "'Deadpool & Wolverine' review: Ryan Reynolds turns Marvel's unexpected superhero",
-      "reviewLink": "https://www.newsbytesapp.com/news/entertainment/deadpool-wolverine-review-marvel-finally-gets-it-right/story",
-      "imageUrl": "https://i.cdn.newsbytesapp.com/images/l3120240726162021.jpeg?tr=w-720",
-      "dateOfReview": "2024-07-26",
-      "sourceName": "newsbytesapp.com"
-    },
-    {
-      "id": 4,
-      "reviewTitle": "'Gehraiyaan' review: Deepika Padukone's brilliantly vulnerable act pays off",
-      "reviewLink": "https://www.newsbytesapp.com/news/entertainment/gehraiyaan-review-shakun-batra-gives-characteristic-layered-tale/story",
-      "imageUrl": "https://i.cdn.newsbytesapp.com/images/l59320220211164427.jpeg?tr=w-720",
-      "dateOfReview": "2022-02-11",
-      "sourceName": "newsbytesapp.com"
-    },
-    {
-      "id": 5,
-      "reviewTitle": "'RRR' review: Magnificent graphics, exemplary action sequences, a power-packed entertainer",
-      "reviewLink": "https://www.newsbytesapp.com/news/entertainment/rrr-review-magnificent-tale-of-the-macho-brothers/story",
-      "imageUrl": "https://i.cdn.newsbytesapp.com/images/l57420220325144252.jpeg?tr=w-720",
-      "dateOfReview": "2022-03-25",
-      "sourceName": "newsbytesapp.com"
-    },
-    {
-      "id": 6,
-      "reviewTitle": "'Moana 2' review: Emotional, powerful tale of heritage and hope",
-      "reviewLink": "https://www.newsbytesapp.com/news/entertainment/moana-2-review-emotional-inspiring/story",
-      "imageUrl": "https://i.cdn.newsbytesapp.com/images/l22120241129144959.jpeg?tr=w-720",
-      "dateOfReview": "2024-11-29",
-      "sourceName": "newsbytesapp.com"
-    },
-    {
-      "id": 7,
-      "reviewTitle": "'Doctor Strange 2' review: Jam-packed horror adventure with visual extravaganza",
-      "reviewLink": "https://www.newsbytesapp.com/news/entertainment/doctor-strange-2-review-jam-packed-horror-adventure/story",
-      "imageUrl": "https://i.cdn.newsbytesapp.com/images/l70420220506162402.jpeg?tr=w-720",
-      "dateOfReview": "2022-05-06",
-      "sourceName": "newsbytesapp.com"
-    },
-    {
-      "id": 8,
-      "reviewTitle": "#NewsbytesReview: 'Spider-Man: No Way Home' sums up trilogy beautifully",
-      "reviewLink": "https://www.newsbytesapp.com/news/entertainment/spider-man-no-way-home-review-nostalgia-runs-high/story",
-      "imageUrl": "https://i.cdn.newsbytesapp.com/images/l28220211216180834.jpeg?tr=w-720",
-      "dateOfReview": "2021-12-16",
-      "sourceName": "newsbytesapp.com"
-    },
-    {
-      "id": 9,
-      "reviewTitle": "'Atrangi Re' review: Dhanush is darling; rest makes little sense",
-      "reviewLink": "https://www.newsbytesapp.com/news/entertainment/atrangi-re-review-ar-rahman-s-music-is-savior/story",
-      "imageUrl": "https://i.cdn.newsbytesapp.com/images/l100020211224171526.jpeg?tr=w-720",
-      "dateOfReview": "2021-12-24",
-      "sourceName": "newsbytesapp.com"
-    },
-    {
-      "id": 10,
-      "reviewTitle": "'Jagame Thandhiram' review: Dhanush's action drama entertains, makes you empathize",
-      "reviewLink": "https://www.newsbytesapp.com/news/entertainment/jagame-thandhiram-immigration-issue-lies-behind-gang-wars/story",
-      "imageUrl": "https://i.cdn.newsbytesapp.com/images/l99120210618161209.png?tr=w-720",
-      "dateOfReview": "2021-06-18",
-      "sourceName": "newsbytesapp.com"
-    }
-    
-  ]
-  
+  {
+    "id": 1,
+    "reviewTitle": "'Deadpool & Wolverine' review: Ryan Reynolds turns Marvel's unexpected superhero",
+    "reviewLink": "https://www.newsbytesapp.com/news/entertainment/deadpool-wolverine-review-marvel-finally-gets-it-right/story",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/images/l3120240726162021.jpeg?tr=w-720",
+    "dateOfReview": "2024-07-26",
+    "sourceName": "newsbytesapp.com"
+  },
+  {
+    "id": 2,
+    "reviewTitle": "'Final Reckoning' review: Tom Cruise returns as cinema's relentless savior",
+    "reviewLink": "https://www.newsbytesapp.com/news/entertainment/mission-impossible-the-final-reckoning-review/story",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/images/l67520250517141415.jpeg?tr=w-720",
+    "dateOfReview": "2025-05-17",
+    "sourceName": "newsbytesapp.com"
+  },
+  {
+    "id": 3,
+    "reviewTitle": "'Gangubai Kathiawadi' review: Alia is mesmerizing but story lacks plenitude",
+    "reviewLink": "https://www.newsbytesapp.com/news/entertainment/gangubai-kathiawadi-review-alia-bhatt-is-breathtaking/story",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/images/l60320220225143042.jpeg?tr=w-720",
+    "dateOfReview": "2022-02-25",
+    "sourceName": "newsbytesapp.com"
+  },
+  {
+    "id": 4,
+    "reviewTitle": "'Bhoot Police' is fun and sometimes it's all that matters",
+    "reviewLink": "https://www.newsbytesapp.com/news/entertainment/bhoot-police-review-it-is-mostly-fun/story",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/images/l15820210910154958.jpeg?tr=w-720",
+    "dateOfReview": "2021-09-10",
+    "sourceName": "newsbytesapp.com"
+  },
+  {
+    "id": 5,
+    "reviewTitle": "'Gehraiyaan' review: Deepika Padukone's brilliantly vulnerable act pays off",
+    "reviewLink": "https://www.newsbytesapp.com/news/entertainment/gehraiyaan-review-shakun-batra-gives-characteristic-layered-tale/story",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/images/l59320220211164427.jpeg?tr=w-720",
+    "dateOfReview": "2022-02-11",
+    "sourceName": "newsbytesapp.com"
+  },
+  {
+    "id": 6,
+    "reviewTitle": "'RRR' review: Magnificent graphics, exemplary action sequences, a power-packed entertainer",
+    "reviewLink": "https://www.newsbytesapp.com/news/entertainment/rrr-review-magnificent-tale-of-the-macho-brothers/story",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/images/l57420220325144252.jpeg?tr=w-720",
+    "dateOfReview": "2022-03-25",
+    "sourceName": "newsbytesapp.com"
+  },
+  {
+    "id": 7,
+    "reviewTitle": "'Moana 2' review: Emotional, powerful tale of heritage and hope",
+    "reviewLink": "https://www.newsbytesapp.com/news/entertainment/moana-2-review-emotional-inspiring/story",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/images/l22120241129144959.jpeg?tr=w-720",
+    "dateOfReview": "2024-11-29",
+    "sourceName": "newsbytesapp.com"
+  },
+  {
+    "id": 8,
+    "reviewTitle": "'Doctor Strange 2' review: Jam-packed horror adventure with visual extravaganza",
+    "reviewLink": "https://www.newsbytesapp.com/news/entertainment/doctor-strange-2-review-jam-packed-horror-adventure/story",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/images/l70420220506162402.jpeg?tr=w-720",
+    "dateOfReview": "2022-05-06",
+    "sourceName": "newsbytesapp.com"
+  },
+  {
+    "id": 9,
+    "reviewTitle": "#NewsbytesReview: 'Spider-Man: No Way Home' sums up trilogy beautifully",
+    "reviewLink": "https://www.newsbytesapp.com/news/entertainment/spider-man-no-way-home-review-nostalgia-runs-high/story",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/images/l28220211216180834.jpeg?tr=w-720",
+    "dateOfReview": "2021-12-16",
+    "sourceName": "newsbytesapp.com"
+  },
+  {
+    "id": 10,
+    "reviewTitle": "'Atrangi Re' review: Dhanush is darling; rest makes little sense",
+    "reviewLink": "https://www.newsbytesapp.com/news/entertainment/atrangi-re-review-ar-rahman-s-music-is-savior/story",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/images/l100020211224171526.jpeg?tr=w-720",
+    "dateOfReview": "2021-12-24",
+    "sourceName": "newsbytesapp.com"
+  },
+  {
+    "id": 11,
+    "reviewTitle": "'Jagame Thandhiram' review: Dhanush's action drama entertains, makes you empathize",
+    "reviewLink": "https://www.newsbytesapp.com/news/entertainment/jagame-thandhiram-immigration-issue-lies-behind-gang-wars/story",
+    "imageUrl": "https://i.cdn.newsbytesapp.com/images/l99120210618161209.png?tr=w-720",
+    "dateOfReview": "2021-06-18",
+    "sourceName": "newsbytesapp.com"
+  }
+]
