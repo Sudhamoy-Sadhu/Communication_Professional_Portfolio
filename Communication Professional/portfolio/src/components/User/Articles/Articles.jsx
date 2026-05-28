@@ -17,10 +17,16 @@ function Articles() {
     return formattedDate;
   };
 
-  // Fetch articles data from the JSON file
+  // Fetch and sort articles data from the JSON file
   useEffect(() => {
-    setArticles(articlesData);
-    setFilteredArticles(articlesData);
+    // 1. Create a copy of the array and sort it in descending order (newest first)
+    const sortedArticles = [...articlesData].sort((a, b) => {
+      return new Date(b.dateOfArticle) - new Date(a.dateOfArticle);
+    });
+
+    // 2. Set the state with the newly sorted array
+    setArticles(sortedArticles);
+    setFilteredArticles(sortedArticles);
     setIsLoading(false);
   }, []);
 

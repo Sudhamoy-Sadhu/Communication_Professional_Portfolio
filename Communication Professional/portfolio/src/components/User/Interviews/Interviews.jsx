@@ -16,10 +16,15 @@ function Interviews() {
   };
 
   useEffect(() => {
+
+    const sortedInterviews = [...interviewsData].sort((a, b) => {
+          return new Date(b.dateOfInterview) - new Date(a.dateOfInterview);
+        });
+
     // Simulating a delay like an API call
     setTimeout(() => {
-      setInterviews(interviewsData); // Use the imported data
-      setFilteredInterviews(interviewsData);
+      setInterviews(sortedInterviews); // Use the imported data
+      setFilteredInterviews(sortedInterviews);
       setIsLoading(false);
     }, 1000); // 1 second delay for simulation
   }, []);

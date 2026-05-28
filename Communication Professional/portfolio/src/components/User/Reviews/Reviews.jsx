@@ -18,10 +18,15 @@ function Reviews() {
 
   // Simulate fetching reviews data from the JSON file
   useEffect(() => {
+
+    const sortedReviews = [...reviewsData].sort((a, b) => {
+      return new Date(b.dateOfReview) - new Date(a.dateOfReview);
+    });
+
     // Simulating a delay like an API call
     setTimeout(() => {
-      setReviews(reviewsData);
-      setFilteredReviews(reviewsData);
+      setReviews(sortedReviews);
+      setFilteredReviews(sortedReviews);
       setIsLoading(false);
     }, 1000); // 1 second delay for simulation
   }, []);

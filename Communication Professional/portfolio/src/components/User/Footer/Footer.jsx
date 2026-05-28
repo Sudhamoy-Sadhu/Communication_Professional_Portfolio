@@ -5,12 +5,14 @@ import { FaWordpress } from "react-icons/fa";
 import ContactMeModal from "../ContactMe/ContactMeModal";
 function Footer() {
     const [modalOpen, setModalOpen] = useState(false);
+
+    const currentYear = new Date().getFullYear();
     return (
         <>
             <div className="footermain">
                 <div className="footertop">
                     <div className="leftF">
-                        <img className="profile-pic-footer"></img>
+                        <img className="profile-pic-footer" alt="Shreya Mukherjee"></img>
                         <span>A media professional with 7+ years of experience in writing, editing, and publishing content across print and digital platforms.</span>
                     </div>
                     <div className="rightF">
@@ -30,7 +32,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="footerbottom">
-                    <p>&copy; 2026 Shreya Mukherjee. All rights reserved.</p>
+                    <p>&copy; {currentYear} Shreya Mukherjee. All rights reserved.</p>
                 </div>
             </div>
             {modalOpen && <ContactMeModal onClose={() => setModalOpen(false)} />}
