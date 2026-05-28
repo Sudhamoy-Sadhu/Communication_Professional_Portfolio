@@ -5,6 +5,7 @@ import { CiSearch } from "react-icons/ci";
 import { TbTriangleInvertedFilled } from "react-icons/tb";
 import { FaPlug } from "react-icons/fa";
 import axios from "axios";
+import { useCallback } from "react";
 import { API_GET_ARTICLES, API_GET_INTERVIEWS, API_GET_REVIEWS } from "../../../../apiUrl";
 
 function ContentHeader({
@@ -20,24 +21,11 @@ function ContentHeader({
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [selectedSource, setSelectedSource] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
 
-  useEffect(() => {
-    if (location.pathname === "/interviews") {
-      setActiveLink("Interviews");
-      fetchInterviews();
-    } else if (location.pathname === "/articles") {
-      setActiveLink("Articles");
-      fetchArticles();
-    } else {
-      setActiveLink("Reviews");
-      fetchReviews();
-    }
-  }, [location]);
 
   // Fetch Reviews data
-  const fetchReviews = async () => {
+  const fetchReviews = useCallback(async () => {
     try {
       const response = await axios.get(API_GET_REVIEWS);
       const data = response.data.map((review) => ({
@@ -49,15 +37,13 @@ function ContentHeader({
       }));
       setReviews(data);
       setFilteredReviews(data);
-      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching reviews:", error);
-      setIsLoading(false);
     }
-  };
+  },[setFilteredReviews,setReviews]);
 
   // Fetch Articles data
-  const fetchArticles = async () => {
+  const fetchArticles = useCallback(async () => {
     try {
       const response = await axios.get(API_GET_ARTICLES);
       const data = response.data.map((article) => ({
@@ -68,15 +54,13 @@ function ContentHeader({
         sourceName: article.sourceName || "",
       }));
       setFilteredArticles(data);
-      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching articles:", error);
-      setIsLoading(false);
     }
-  };
+  },[setFilteredArticles]);
 
   // Fetch Interviews data
-  const fetchInterviews = async () => {
+  const fetchInterviews = useCallback(async () => {
     try {
       const response = await axios.get(API_GET_INTERVIEWS);
       const data = response.data.map((interview) => ({
@@ -87,12 +71,23 @@ function ContentHeader({
         sourceName: interview.sourceName || "",
       }));
       setFilteredInterviews(data);
-      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching interviews:", error);
-      setIsLoading(false);
     }
-  };
+  },[setFilteredInterviews]);
+
+   useEffect(() => {
+    if (location.pathname === "/interviews") {
+      setActiveLink("Interviews");
+      fetchInterviews();
+    } else if (location.pathname === "/articles") {
+      setActiveLink("Articles");
+      fetchArticles();
+    } else {
+      setActiveLink("Reviews");
+      fetchReviews();
+    }
+  }, [location, fetchArticles, fetchInterviews, fetchReviews]);
 
   // Handle the change in search query
   const handleSearchChange = (e) => {

@@ -12,14 +12,14 @@ function Footer() {
             <div className="footermain">
                 <div className="footertop">
                     <div className="leftF">
-                        <img className="profile-pic-footer" alt="Shreya Mukherjee"></img>
+                        <img src="/assets/mainImg.jpg" className="profile-pic-footer" alt="Shreya Mukherjee"></img>
                         <span>A media professional with 7+ years of experience in writing, editing, and publishing content across print and digital platforms.</span>
                     </div>
                     <div className="rightF">
                         <div className="footer-menu">
                             <a href="/">Home</a>
                             <a href="/resume">Resume</a>
-                            <a onClick={() => setModalOpen(true)}>Contact Me</a>
+                            <button onClick={() => setModalOpen(true)}>Contact Me</button>
                         </div>
                         <div className="footer-social-links">
                             <p>Social</p>

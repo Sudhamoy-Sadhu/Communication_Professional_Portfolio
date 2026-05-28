@@ -22,9 +22,16 @@
 
 .ReviewsContent {
   width: 27vw;
-  height: 50vh;
+  height: 45vh;
+  border-radius: 5px;
   /* background: red; */
+  padding: 10px;
+  &:hover{
+    transition: 0.3s ease-out;
+    transform: scale(1.05);
+  }
 }
+
 .ReviewsContent a{
   text-decoration: none;
 }

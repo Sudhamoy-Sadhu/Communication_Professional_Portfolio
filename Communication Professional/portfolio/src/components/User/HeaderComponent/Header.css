@@ -106,26 +106,16 @@
   box-sizing: border-box;
   border-radius: 50%;
 }
-.lc a{
-  text-decoration: none;
-  color: white;
-}
+
 .lc:hover{
-  background: #d0d3d7;
-  color: black;
+  background: #0B66C3;
+  border: none;
+  color: white;
   font-weight: 200;
   font-family: "Times New Roman", Times, serif;
   cursor: pointer;
 }
-.lc a:hover{
-  color: black;
-}
-/* .lc:hover {
-  color: black;
-  font-weight: 100;
-  font-family: "Times New Roman", Times, serif;
-  cursor: pointer;
-} */
+
 .cus {
   background: transparent;
   color: white;

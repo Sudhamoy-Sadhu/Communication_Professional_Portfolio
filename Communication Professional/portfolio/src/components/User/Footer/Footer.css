@@ -28,7 +28,6 @@
   border-radius: 50%;
   border: 2px solid white;
   box-sizing: border-box;
-  background-image: url("../../../../public/assets/mainImg.jpg");
   background-size: cover;
   margin-top: 20px;
 }
@@ -74,6 +73,26 @@
 }
 
 .rightF a:hover {
+  cursor: pointer;
+  font-weight: 500;
+  color: #fff;
+}
+.rightF button {
+  background: none;
+  outline: none;
+  color: #c0bfbf;
+  text-align: start;
+  border: none;
+  padding: 0;
+  margin: 5px 0;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-weight: 100; */
+}
+
+.rightF button:hover {
   cursor: pointer;
   font-weight: 500;
   color: #fff;
