@@ -17,7 +17,7 @@
   }
   
   .ReviewsContent {
-    width: 33vw;
+    width: 27vw;
     height: 50vh;
     /* background: red; */
   }
@@ -37,7 +37,7 @@
   }
   .mainPic {
     height: 32vh;
-    width: 33vw;
+    width: 27vw;
     border-radius: 10px;
     cursor: pointer;
   }

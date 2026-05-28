@@ -168,10 +168,13 @@
 }
 
 .menu.open {
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: fit-content;
+  background: white;
+  box-sizing: border-box;
 }
 
 .menu button {
@@ -180,6 +183,8 @@
   border: none;
   padding: 10px;
   font-size: 18px;
+  width: 100%;
+  height: fit-content;
 }
 
 @media (max-width: 600px) {
@@ -192,7 +197,7 @@
   }
   .menu{
     width: 55vw;
-    height: 1-5vh;
+    height: 1vh;
     top: 40px;
     right: 0px;
     padding: 0;
