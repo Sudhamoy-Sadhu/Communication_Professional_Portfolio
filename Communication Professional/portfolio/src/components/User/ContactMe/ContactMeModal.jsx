@@ -3,6 +3,7 @@ import axios from 'axios';
 import './ContactMeModal.css';
 import { API_CONTACT_ME } from '../../../apiUrl';
 import ReCAPTCHA from "react-google-recaptcha";
+import { IoIosCloseCircle } from "react-icons/io";
 
 function ContactMeModal({ onClose }) {
   const [name, setName] = useState('');
@@ -72,9 +73,9 @@ function ContactMeModal({ onClose }) {
   }
 
   return (
-    <div className="modal-overlay">
-      <div className="contact-modal">
-        <span className="close-btn" onClick={onClose}>X</span>
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
+        <span className="close-btn" onClick={onClose}><IoIosCloseCircle /></span>
         <h2>Contact Shreya Mukherjee</h2>
 
         {success && <p className="success-message">{success}</p>}

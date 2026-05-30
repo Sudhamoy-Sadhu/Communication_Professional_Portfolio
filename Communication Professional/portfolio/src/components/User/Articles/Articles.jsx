@@ -25,9 +25,11 @@ function Articles() {
     });
 
     // 2. Set the state with the newly sorted array
-    setArticles(sortedArticles);
-    setFilteredArticles(sortedArticles);
-    setIsLoading(false);
+    setTimeout(() => {
+      setArticles(sortedArticles);
+      setFilteredArticles(sortedArticles);
+      setIsLoading(false);
+    }, 1000);
   }, []);
 
   return (
