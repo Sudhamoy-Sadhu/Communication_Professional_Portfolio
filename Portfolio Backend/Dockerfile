@@ -1,5 +1,5 @@
 # Step 1: Use an official Java runtime as the base image
-FROM openjdk:21-slim AS build
+FROM eclipse-temurin:21-jdk-jammy AS build
 
 # Step 2: Set the working directory inside the container
 WORKDIR /app
@@ -18,7 +18,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Step 7: Use the same lightweight JDK image to run the Spring Boot application
-FROM openjdk:21-slim
+FROM eclipse-temurin:21-jdk-jammy
 
 # Set the working directory in the final image
 WORKDIR /app
