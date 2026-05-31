@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.Service.EmailSenderService;
 
-import jakarta.mail.MessagingException;
 
 @RestController
 @RequestMapping("/contactMe")
@@ -21,7 +20,7 @@ public class ContactController {
             // Call the email sender service to send the email
             emailSenderService.sendContactFormEmail(contactForm.getName(), contactForm.getEmail(), contactForm.getMessage());
             return "Message sent successfully!";
-        } catch (MessagingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return "Error sending message. Please try again later.";
         }
