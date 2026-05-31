@@ -19,40 +19,44 @@ import ArticleEditTable from "./components/Admin/AdminDashboard/AdminEditTable/A
 import ArticleEditForm from "./components/Admin/AdminDashboard/AdminEditTable/AdminArticlesActions/ArticelEditForm";
 import ArticleDeleteTable from "./components/Admin/AdminDashboard/AdminEditTable/AdminArticlesActions/ArticleDeleteTable";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
+import { ToastContainer } from 'react-toastify';
 
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/interviews" element={<InterviewsPage />} />
-        <Route path="/articles" element={<ArticlesPage />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/adlogin" element={<AdminLogin />} />
+    <>
+      <ToastContainer position="top-right" autoClose={3000} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/interviews" element={<InterviewsPage />} />
+          <Route path="/articles" element={<ArticlesPage />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/adlogin" element={<AdminLogin />} />
 
 
-      <Route element={<ProtectedRoutes/>}>
+          <Route element={<ProtectedRoutes />}>
 
-        <Route path="/adreviewsForm" element={<AdminReviewsForm />} />  
-        <Route path="/adInterviewsForm" element={<AdminInterviewForm />} />
-        <Route path="/adArticlesForm" element={<AdminArticlesForm />} />
-        <Route path="/adminDashboard" element={<AdminDashboard />} />
-        <Route path="/adminEditTable" element={<AdminEditTable />} />
-        <Route path="/adminEditForm/:id" element={<AdminEditForm />} />
-        <Route path="/adminDeleteTable" element={<AdminDeleteTable />} />
-        <Route path="/interviewEditTable" element={<InterviewEditTable />} />
-        <Route path="/interviewEditForm/:id" element={<InterviewEditForm />} />
-        <Route path="/interviewDeleteTable" element={<InterviewDeleteTable />} />
-        <Route path="/articleEditTable" element={<ArticleEditTable />} />
-        <Route path="/articleEditForm/:id" element={<ArticleEditForm />} />
-        <Route path="/articleDeleteTable" element={<ArticleDeleteTable />} />
-      
-      </Route>
+            <Route path="/adreviewsForm" element={<AdminReviewsForm />} />
+            <Route path="/adInterviewsForm" element={<AdminInterviewForm />} />
+            <Route path="/adArticlesForm" element={<AdminArticlesForm />} />
+            <Route path="/adminDashboard" element={<AdminDashboard />} />
+            <Route path="/adminEditTable" element={<AdminEditTable />} />
+            <Route path="/adminEditForm/:id" element={<AdminEditForm />} />
+            <Route path="/adminDeleteTable" element={<AdminDeleteTable />} />
+            <Route path="/interviewEditTable" element={<InterviewEditTable />} />
+            <Route path="/interviewEditForm/:id" element={<InterviewEditForm />} />
+            <Route path="/interviewDeleteTable" element={<InterviewDeleteTable />} />
+            <Route path="/articleEditTable" element={<ArticleEditTable />} />
+            <Route path="/articleEditForm/:id" element={<ArticleEditForm />} />
+            <Route path="/articleDeleteTable" element={<ArticleDeleteTable />} />
 
-      </Routes>
-    </BrowserRouter>
+          </Route>
+
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

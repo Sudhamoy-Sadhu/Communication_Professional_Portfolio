@@ -4,14 +4,14 @@ import './ContactMeModal.css';
 import { API_CONTACT_ME } from '../../../apiUrl';
 import ReCAPTCHA from "react-google-recaptcha";
 import { IoIosCloseCircle } from "react-icons/io";
+import { toast } from 'react-toastify';
 
 function ContactMeModal({ onClose }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [captcha, setCaptcha] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Email validation regex
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -21,25 +21,27 @@ function ContactMeModal({ onClose }) {
 
     // Basic form validation
     if (!name || !email || !message || !captcha) {
-      setError('Please fill out all fields and complete the CAPTCHA');
+      toast.error('Please fill out all fields and complete the CAPTCHA');
       return;
     }
 
     // Validate email format
     if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address');
+      toast.error('Please enter a valid email address');
       return;
     }
 
     // Check if the email is already stored in localStorage
     const storedEmail = localStorage.getItem('userEmail');
     if (storedEmail === email) {
-      setError('This email has already been submitted.');
+      toast.warning('This email has already been submitted.');
       return;
     }
 
     // Store the email in localStorage
     localStorage.setItem('userEmail', email);
+
+    setLoading(true);
 
     const formData = {
       name,
@@ -52,18 +54,18 @@ function ContactMeModal({ onClose }) {
       const response = await axios.post(API_CONTACT_ME, formData);
 
       if (response.status === 200) {
-        setSuccess('Your message has been sent successfully!');
-        alert("Message sent! Admin will contact you soon!");
+        toast.success('Your message has been sent successfully!');
         setName('');
         setEmail('');
         setMessage('');
         setCaptcha(false);
-        setError('');
         onClose();
       }
     } catch (err) {
       console.error('Error submitting the form:', err);
-      setError('Error sending the message. Please try again.');
+      toast.error('Error sending the message. Please try again.');
+    } finally{
+      setLoading(false);
     }
   };
 
@@ -77,9 +79,6 @@ function ContactMeModal({ onClose }) {
       <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
         <span className="close-btn" onClick={onClose}><IoIosCloseCircle /></span>
         <h2>Contact Shreya Mukherjee</h2>
-
-        {success && <p className="success-message">{success}</p>}
-        {error && <p className="error-message">{error}</p>}
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -127,9 +126,9 @@ function ContactMeModal({ onClose }) {
           <button
             type="submit"
             className="submit-btn"
-            disabled={!captcha || !name || !email || !message}
+            disabled={!captcha || !name || !email || !message || loading}
           >
-            Send
+            {loading ? "Sending..." : "Send"}
           </button>
         </form>
       </div>
