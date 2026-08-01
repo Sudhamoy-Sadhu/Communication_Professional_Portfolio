@@ -70,6 +70,22 @@
       "imageUrl": "https://i.cdn.newsbytesapp.com/images/l78920260513142157.jpeg?tr=w-720",
       "dateOfArticle": "2026-05-13",
       "sourceName": "newsbytesapp.com"
+    },
+    {
+      "id": 10,
+      "articleTitle": "'Satluj' and Indian film censorship",
+      "articleLink": "https://www.newsbytesapp.com/news/entertainment/satluj-and-indian-film-censorship/story",
+      "imageUrl": "https://i.cdn.newsbytesapp.com/images/l34120260706221403.jpeg?tr=w-720",
+      "dateOfArticle": "2026-07-07",
+      "sourceName": "newsbytesapp.com"
+    },
+    {
+      "id": 11,
+      "articleTitle": "Everyone’s lying about endometriosis",
+      "articleLink": "https://medium.com/fourth-wave/everyones-lying-about-endometriosis-b9b6b690d91f",
+      "imageUrl": "https://miro.medium.com/v2/resize:fit:2000/format:webp/1*uwtEyDC5wXd5dFg1HDXQfw.jpeg",
+      "dateOfArticle": "2026-07-10",
+      "sourceName": "medium.com"
     }
   ]
   
